@@ -22,8 +22,8 @@ public class MembersManagementSystem {
     public void searchMember(Member m){
         for(Member member:members){
             if(member.getId()==m.getId()){
-             m.displayDetails();
-             m.displayBorrowedBooks();
+             member.displayDetails();
+             member.displayBorrowedBooks();
              return;
             }
         }throw new NotAMemberException("This person is not a member of this library");

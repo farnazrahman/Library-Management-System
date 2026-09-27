@@ -2,7 +2,7 @@ public class Book {
     private final String title;
     private final String isbn;
     private final String author;
-    private final boolean isAvailable;
+    private boolean isAvailable;
 
     public Book(String title, String isbn, String author) {
         this.title = title;
@@ -30,4 +30,9 @@ public class Book {
         System.out.println("Title: "+this.getTitle() + "|| Author: "+this.getAuthor());
 
     }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
 }

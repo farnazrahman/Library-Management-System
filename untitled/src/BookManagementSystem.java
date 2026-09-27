@@ -23,17 +23,25 @@ public class BookManagementSystem {
     }
 
     public void searchBook(Book book) throws BookNotAvailableException{
-        for(Book e:books){
-            if(book.getIsbn().equals(e.getIsbn())){
+        for(Book e:books) {
+            if (e.getIsbn().equals(book.getIsbn())) {
                 System.out.println("This book is available.");
                 e.displayDetails();
                 return;
-            }throw new BookNotAvailableException("This book is not available.");
-        }
+            }
+        }throw new BookNotAvailableException("This book is not available.");
+
     }
-    public void displayBooks(){
+    public void displayAllBooks(){
         for (Book e:books){
             e.displayDetails();
+        }
+    }
+    public void displayAvailableBooks(){
+        for (Book e:books){
+            if(e.isAvailable()) {
+                e.displayDetails();
+            }
         }
     }
 }
